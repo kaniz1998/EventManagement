@@ -1,0 +1,89 @@
+<div class="container mt-5">
+    <div class="row">
+        <p class="display-4 alert alert-warning text-center">Doctor Information</p>
+        <div class="col-4">
+            <form (ngSubmit)="insertDoctor()" class="bg-info">
+                <div>
+                    <label for="DoctorName">Doctor Name</label>
+                    <input id="DoctorName" name="DoctorName" type="text" [(ngModel)]="postDoctor.DoctorName" class="form-control" />
+                </div>
+                <div>
+                    <label for="DepartmentID">Department ID</label>
+                    <input id="DepartmentID" name="DepartmentID" type="number" [(ngModel)]="postDoctor.DepartmentID" class="form-control" />
+                </div>
+                <div>
+                    <label for="Specialization">Specialization</label>
+                    <input id="Specialization" name="Specialization" type="text" [(ngModel)]="postDoctor.Specialization" class="form-control" />
+                </div>
+                <div>
+                    <label for="Doctortype">Doctor Type</label>
+                    <input id="Doctortype" name="Doctortype" type="text" [(ngModel)]="postDoctor.Doctortype" class="form-control" />
+                </div>
+                <div>
+                    <label for="JoinDate">Join Date</label>
+                    <input id="JoinDate" name="JoinDate" type="date" [(ngModel)]="postDoctor.JoinDate" class="form-control" />
+                </div>
+                <div>
+                    <label for="ResignDate">Resign Date</label>
+                    <input id="ResignDate" name="ResignDate" type="date" [(ngModel)]="postDoctor.ResignDate" class="form-control" />
+                </div>
+                <div>
+                    <label for="EmployeeStatus">Employee Status</label>
+                    <input id="EmployeeStatus" name="EmployeeStatus" type="text" [(ngModel)]="postDoctor.EmployeeStatus" class="form-control" />
+                </div>
+                <div>
+                    <label for="Education_Info">Education Info</label>
+                    <input id="Education_Info" name="Education_Info" type="text" [(ngModel)]="postDoctor.Education_Info" class="form-control" />
+                </div>
+                <div>
+                    <label for="PhoneNumber">Phone Number</label>
+                    <input id="PhoneNumber" name="PhoneNumber" type="text" [(ngModel)]="postDoctor.PhoneNumber" class="form-control" />
+                </div>
+                <div>
+                    <label for="Image">Image</label>
+                    <input id="Image" name="Image" type="text" [(ngModel)]="postDoctor.Image" class="form-control" />
+                </div>
+                <div class="offset-5 mt-1">
+                    <button type="submit" class="btn btn-outline-primary">SAVE</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-8">
+            <table class="table table-bordered table-striped">
+                <thead class="table table-primary">
+                    <tr>
+                        <th>Doctor Name</th>
+                        <th>Department</th>
+                        <th>Specialization</th>
+                        <th>Doctor Type</th>
+                        <th>Join Date</th>
+                        <th>Resign Date</th>
+                        <th>Doctor Status</th>
+                        <th>Education Info</th>
+                        <th>Phone Number</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let doc of Doctor">
+                        <td>{{doc.DoctorName}}</td>
+                        <td>{{doc.DepartmentID}}</td>
+                        <td>{{doc.Specialization}}</td>
+                        <td>{{doc.Doctortype}}</td>
+                        <td>{{doc.JoinDate | date:'yyyy-MM-dd'}}</td>
+                        <td>{{doc.ResignDate | date:'yyyy-MM-dd'}}</td>
+                        <td>{{doc.EmployeeStatus}}</td>
+                        <td>{{doc.Education_Info}}</td>
+                        <td>{{doc.PhoneNumber}}</td>
+                        <td>{{doc.Image}}</td>
+                        <td class="text-center">
+                            <a (click)="PopulateData(doc)" class="btn btn-primary mr-5">EDIT</a>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

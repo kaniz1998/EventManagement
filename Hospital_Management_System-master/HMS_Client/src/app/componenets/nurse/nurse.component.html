@@ -1,0 +1,86 @@
+<div class="container mt-5">
+    <div class="row">
+      <p class="display-4 alert alert-warning text-center">Nurse Information</p>
+      <div class="col-4">
+  
+        <form (ngSubmit)="insertNurse()" class="bg-info">
+          <div>
+            <label for="nurseName">Name</label>
+            <input id="nurseName" name="nurseName" type="text" [(ngModel)]="postNurse.nurseName"  class="form-control" />
+          </div> 
+          <div>
+            <label for="nurseLevel">Level</label>
+            <input id="nurseLevel" name="nurseLevel" type="text" [(ngModel)]="postNurse.nurseLevel"  class="form-control" />
+          </div>  
+          <div>
+            <label for="nurseType">Type</label>
+            <input id="nurseType" name="nurseType" type="text" [(ngModel)]="postNurse.nurseType"  class="form-control" />
+          </div>  
+          <div>
+            <label for="joinDate">J.Date</label>
+            <input id="joinDate" name="joinDate" type="date" [(ngModel)]="postNurse.joinDate"  class="form-control" />
+          </div>  
+          <div>
+            <label for="resignDate">R.Date</label>
+            <input id="resignDate" name="resignDate" type="date" [(ngModel)]="postNurse.resignDate"  class="form-control" />
+          </div>  
+          <div>
+            <label for="employeeStatus">Status</label>
+            <input id="employeeStatus" name="employeeStatus" type="text" [(ngModel)]="postNurse.employeeStatus"  class="form-control" />
+          </div>  
+          <div>
+            <label for="educationInfo">Education</label>
+            <input id="educationInfo" name="educationInfo" type="text" [(ngModel)]="postNurse.educationInfo"  class="form-control" />
+          </div>       
+          <div>
+            <label for="image">Image</label>
+            <input id="image" name="image" type="file" [(ngModel)]="postNurse.image"  class="form-control" />
+          </div> 
+          <div>
+            <label for="phoneNumber">Phone</label>
+            <input id="phoneNumber" name="phoneNumber" type="text" [(ngModel)]="postNurse.phoneNumber"  class="form-control" />
+          </div> 
+          <div class="offset-5 mt-1">
+            <button type="submit" class="btn btn-outline-primary">SAVE</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-8">
+        <table class="table table-bordered table-strip">
+          <thead class="table table-primary">
+            <tr>
+              <th>Name</th>
+              <th>Level</th>
+              <th>Type</th>
+              <th>J.Date</th>
+              <th>R.Date</th>
+              <th>Stutes</th>
+              <th>Edu</th>
+              <th>Img</th>
+              <th>Phone</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ok of Nurse">
+              <td>{{ok.nurseName}}</td>
+              <td>{{ok.nurseLevel}}</td>
+              <td>{{ok.nurseType}}</td>
+              <td>{{ok.joinDate}}</td>
+              <td>{{ok.resignDate}}</td>
+              <td>{{ok.Status}}</td>
+              <td>{{ok.educationInfo}}</td>
+              <td>{{ok.image}}</td>
+              <td>{{ok.phoneNumber}}</td>
+              <td class="text-center">
+                <a (click)="PopulateData(ok)" class="btn btn-primary mr-5">EDIT</a>
+                <a (click)="deleteNurse(ok.nurseId)" class="btn btn-danger">DELETE</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+  </div>
+

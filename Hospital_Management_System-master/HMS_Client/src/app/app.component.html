@@ -1,0 +1,28 @@
+<!--<mat-toolbar color="primary">
+  <span>HMS</span>
+  <span class="example-spacer"></span>
+  <a mat-raised-button type="button" style="margin-right: 10px;" class="mr-3" color="warn" [routerLink]="['/bed']">Bed</a>
+  <a mat-raised-button style="margin-right: 10px;" color="accent" [routerLink]="['/preoperativeDiagnosis']">Preoperative Diagnosis</a>
+  <a mat-raised-button style="margin-right: 10px;" color="primary" [routerLink]="['/surgery']">Surgery</a>
+  <a mat-raised-button style="margin-right: 10px;" color="warn" [routerLink]="['/wardCabin']">Ward Cabin</a>
+  <a mat-raised-button style="margin-right: 10px;" color="warn" [routerLink]="['/nurse']">Nurse</a>
+  <a mat-raised-button style="margin-right: 10px;" color="warn" [routerLink]="['/doctor']">Doctor</a>
+</mat-toolbar>-->
+<!-- <h1 class="mat-headline-1 text-center">Hospital Management System</h1>
+<h2 class="mat-headline-1 text-center">Round 53 c#</h2> -->
+<!--<router-outlet></router-outlet>-->
+
+
+<div class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    <app-navbar></app-navbar>
+    <app-sidebar></app-sidebar>
+    <router-outlet>
+    </router-outlet>
+    <app-footer></app-footer>
+  </div>
+</div>
+<div>
+  <router-outlet>
+  </router-outlet>
+</div>

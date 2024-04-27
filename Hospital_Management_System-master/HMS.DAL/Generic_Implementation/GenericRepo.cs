@@ -1,0 +1,54 @@
+﻿using HMS.DAL.Data;
+using HMS.DAL.Generic_Interface;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HMS.DAL.Generic_Implementation
+{
+    public class GenericRepo<T> : IGenericRepo<T> where T : class
+    {
+        private readonly HospitalDbContext _context = null;
+        private readonly DbSet<T> table = null;
+        public GenericRepo(HospitalDbContext hospitalDbContext)
+        {
+            _context = hospitalDbContext;
+            table = _context.Set<T>();
+        }
+        public void Commit()
+        {
+            _context.SaveChanges();
+        }
+
+        public void Create(T entity)
+        {
+            table.Add(entity);
+        }
+
+        public void Delete(object id)
+        {
+            T existing = table.Find(id);
+            table.Remove(existing);
+        }
+
+        public IQueryable<T> FindAll()
+        {
+            return table.AsNoTracking();
+        }
+
+        public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression)
+        {
+            return table.Where(expression).AsNoTracking();
+        }
+
+        public void Update(T entity)
+        {
+            table.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+        }
+    }
+}

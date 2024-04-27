@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <div class="row">
+      <p class="display-4 alert alert-warning text-center">Bed Information</p>
+      <div class="col-4">
+  
+        <form (ngSubmit)="insertBed()" class="bg-info">
+          <div>
+            <label for="bedNumber">Bed Number</label>
+            <input id="bedNumber" name="bedNumber" type="text" [(ngModel)]="postBed.bedNumber"  class="form-control" />
+          </div>
+          <div class="">
+            <label for="isOccupied" class="mr-5" >Is Occupied</label>
+            <input id="isOccupied" name="isOccupied" type="checkbox" />
+          </div>          
+          <div class="offset-5 mt-1">
+            <button type="submit" class="btn btn-outline-primary">SAVE</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-8">
+        <table class="table table-bordered table-strip">
+          <thead class="table table-primary">
+            <tr>
+              <th>Bed Number</th>
+              <th>Is Occupied</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ok of Bed">
+              <td>{{ok.bedNumber}}</td>
+              <td>{{ok.isOccupied}}</td>
+              <td class="text-center">
+                <a (click)="PopulateData(ok)" class="btn btn-primary mr-5">EDIT</a>
+                <a (click)="deleteBed(ok.bedId)" class="btn btn-danger">DELETE</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+  </div>

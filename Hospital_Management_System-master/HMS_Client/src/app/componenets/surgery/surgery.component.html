@@ -1,0 +1,55 @@
+<div class="container mt-5">
+    <div class="row">
+      <p class="display-4 alert alert-warning text-center">Bed Information</p>
+      <div class="col-4">
+  
+        <form (ngSubmit)="insertSurgery()" class="bg-info">
+          <div>
+            <label for="surgeryType">Surgery Type</label>
+            <input id="surgeryType" name="surgeryType" type="text" [(ngModel)]="postSurgery.surgeryType"  class="form-control" />
+          </div>
+          <div>
+            <label for="surgeryDate">Surgery Date</label>
+            <input id="surgeryDate" name="surgeryDate" type="text" [(ngModel)]="postSurgery.surgeryDate"  class="form-control" />
+          </div>
+          <div>
+            <label for="observations">Observations</label>
+            <input id="observations" name="observations" type="text" [(ngModel)]="postSurgery.observations"  class="form-control" />
+          </div>
+          <div>
+            <label for="Postoperative_Diagnosis">Postoperative Diagnosis</label>
+            <input id="Postoperative_Diagnosis" name="Postoperative_Diagnosis" type="text" [(ngModel)]="postSurgery.Postoperative_Diagnosis"  class="form-control" />
+          </div>
+          <div class="offset-5 mt-1">
+            <button type="submit" class="btn btn-outline-primary">SAVE</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-8">
+        <table class="table table-bordered table-strip">
+          <thead class="table table-primary">
+            <tr>
+              <th>Surgery Type</th>
+              <th>Surgery Date</th>
+              <th>Observations</th>
+              <th>Postoperative Diagnosis</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ok of Surgery">
+              <td>{{ok.surgeryType}}</td>
+              <td>{{ok.surgeryDate}}</td>
+              <td>{{ok.observations}}</td>
+              <td>{{ok.Postoperative_Diagnosis}}</td>
+              <td class="text-center">
+                <a (click)="PopulateData(ok)" class="btn btn-primary mr-5">EDIT</a>
+                <a (click)="deleteSurgery(ok.adviceId)" class="btn btn-danger">DELETE</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+  </div>

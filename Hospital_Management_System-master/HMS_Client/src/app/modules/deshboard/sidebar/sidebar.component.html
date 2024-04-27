@@ -1,0 +1,120 @@
+<mat-sidenav-container class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #2196F3; color: white; font-size: 16px;">
+  <!-- Brand Logo -->
+  <a href="#" class="brand-link">
+    <img src="assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <span class="brand-text font-weight-light">HOSPITAL</span>
+  </a>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img src="assets/dist/img/ME.jpg" class="img-fluid rounded-circle shadow" alt="User Image">
+      </div>
+      <div class="info">
+        <a href="#" class="d-block">UserManjurul</a>
+      </div>
+    </div>
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class
+        with font-awesome or any other icon font library -->
+        <li class="nav-item">
+          <a routerLink="" routerLinkActive="active" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Dashboard
+            </p>
+          </a>
+        </li>
+        
+
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+            <p>
+              HR Management
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a routerLink="/department-designation" routerLinkActive="active" class="nav-link">
+
+                <i class="fas fa-building nav-icon"></i>
+
+                <p>Department</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a mat-raised-button type="button" style="margin-right: 10px;" class="mr-3 nav-link" color="warn" [routerLink]="['/bed']">
+                <i class="fas fa-bed nav-icon"></i>
+                <p>Bad</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a mat-raised-button type="button" style="margin-right: 10px;" class="mr-3 nav-link" color="warn" [routerLink]="['/preoperativeDiagnosis']">
+                <i class="fas fa-vials nav-icon"></i>
+                <p>Preoperative D</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a mat-raised-button type="button" style="margin-right: 10px;" class="mr-3 nav-link" color="warn" [routerLink]="['/surgery']">
+                <i class="fas fa-hospital nav-icon"></i>
+                <p>Surgery</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a mat-raised-button type="button" style="margin-right: 10px;" class="mr-3 nav-link" color="warn" [routerLink]="['/wardCabin']">
+                <i class="fas fa-bed nav-icon"></i>
+                <p>Ward Cabin</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a mat-raised-button type="button" style="margin-right: 10px;" class="mr-3 nav-link" color="warn" [routerLink]="['/nurse']">
+                <i class="fas fa-user nav-icon"></i>
+                <p>Nurse</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a mat-raised-button type="button" style="margin-right: 10px;" class="mr-3 nav-link" color="warn" [routerLink]="['/doctor']">
+                <i class="fas fa-user nav-icon"></i>
+                <p>Doctor</p>
+              </a>
+            </li>
+          </ul>
+          
+          
+        </li>
+        
+
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+            <p>
+              Manage Account
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a routerLink="/manage-role" routerLinkActive="active" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Manage Role</p>
+              </a>
+            <li class="nav-item">
+              <a routerLink="/manage-user" routerLinkActive="active" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Manage User</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+  </div>
+  <!-- /.sidebar -->
+</mat-sidenav-container>
+

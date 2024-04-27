@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <div class="row">
+      <p class="display-4 alert alert-warning text-center">Ward Cabin Information</p>
+      <div class="col-4">
+  
+        <form (ngSubmit)="insertWardCabin()" class="bg-info">
+          <div>
+            <label for="wardCabinName">Ward Cabin Name</label>
+            <input id="wardCabinName" name="wardCabinName" type="text" [(ngModel)]="postWardCabin.wardCabinName"  class="form-control" />
+          </div>
+          <div>
+            <label for="wardCabinType">Ward Cabin Type</label>
+            <input id="wardCabinType" name="wardCabinType" type="text" [(ngModel)]="postWardCabin.wardCabinType"  class="form-control" />
+          </div>
+          <div class="offset-5 mt-1">
+            <button type="submit" class="btn btn-outline-primary">SAVE</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-8">
+        <table class="table table-bordered table-strip">
+          <thead class="table table-primary">
+            <tr>
+              <th>Ward Cabin Name</th>
+              <th>Ward Cabin Type</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ok of WardCabin">
+              <td>{{ok.wardCabinName}}</td>
+              <td>{{ok.wardCabinType}}</td>
+              <td class="text-center">
+                <a (click)="PopulateData(ok)" class="btn btn-primary mr-5">EDIT</a>
+                <a (click)="deleteWardCabin(ok.adviceId)" class="btn btn-danger">DELETE</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+  </div>
